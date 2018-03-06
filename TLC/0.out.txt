@@ -1,0 +1,16 @@
+maml.exe Train tr=OnlineGradientDescent loader=TextLoader{sep=, col=match_id:TX:0 col=inning:R4:1 col=batting_team:TX:2 col=bowling_team:TX:3 col=match_year:R4:5 col=extra_runs:R4:4 header=+} data=C:\Users\ajsharm\Documents\ML\IPL\data\transformed\extras.csv out=C:\Users\ajsharm\Documents\ML\IPL\TLC\models\0.model.zip xf=CopyColumns{col=Label:extra_runs} xf=CategoricalTransform{col=batting_team col=bowling_team} xf=Concat{col=Features:inning,batting_team,bowling_team,match_year}
+Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+[1] 'Building term dictionary' started.
+[1] (00:00.02)	567 examples	Total Terms: 26
+[1] 'Building term dictionary' finished in 00:00:00.0205089.
+[2] 'Normalize' started.
+[2] (00:00.05)	567 examples
+[2] 'Normalize' finished in 00:00:00.0550184.
+
+Not training a calibrator because it is not needed.
+Physical memory usage(MB): 52
+Virtual memory usage(MB): 1001
+3/6/2018 8:25:43 PM	 Time elapsed(s): 0.701
+
+[3] 'Saving model' started.
+[3] 'Saving model' finished in 00:00:00.1270066.

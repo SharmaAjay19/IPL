@@ -1,0 +1,142 @@
+maml.exe Train tr=RegressionNeuralNetwork loader=TextLoader{sep=, col=match_id:TX:0 col=inning:R4:1 col=batting_team:TX:2 col=bowling_team:TX:3 col=match_year:R4:5 col=extra_runs:R4:4 header=+} data=C:\Users\ajsharm\Documents\ML\IPL\data\transformed\extras.csv out=C:\Users\ajsharm\Documents\ML\IPL\TLC\models\3.model.zip xf=CopyColumns{col=Label:extra_runs} xf=CategoricalTransform{col=batting_team col=bowling_team} xf=Concat{col=Features:inning,batting_team,bowling_team,match_year}
+Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+[1] 'Building term dictionary' started.
+[1] (00:00.02)	567 examples	Total Terms: 26
+[1] 'Building term dictionary' finished in 00:00:00.0195039.
+[2] 'Normalize' started.
+[2] (00:00.06)	567 examples
+[2] 'Normalize' finished in 00:00:00.0640031.
+Using: AVX Math
+
+***** Net definition *****
+  input Data [28];
+  hidden H [100] sigmoid { // Depth 1
+    from Data all;
+  }
+  output Result [1] linear { // Depth 0
+    from H all;
+  }
+***** End net definition *****
+Input count: 28
+Output count: 1
+Output Function: Linear
+Loss Function: SquaredLoss
+PreTrainer: NoPreTrainer
+___________________________________________________________________
+Starting training...
+Learning rate: 0.001000
+Momentum: 0.000000
+InitWtsDiameter: 0.100000
+___________________________________________________________________
+Initializing 1 Hidden Layers, 3001 Weights...
+Estimated Pre-training MeanError = 91.894189
+Iter:1/100, MeanErr=21.549639(-76.55%), 83.98M WeightUpdates/sec
+Iter:2/100, MeanErr=20.380788(-5.42%), 965.27M WeightUpdates/sec
+Iter:3/100, MeanErr=20.494586(0.56%), 1245.72M WeightUpdates/sec
+Iter:4/100, MeanErr=20.424129(-0.34%), 1020.21M WeightUpdates/sec
+Iter:5/100, MeanErr=20.400027(-0.12%), 1061.40M WeightUpdates/sec
+Iter:6/100, MeanErr=20.247098(-0.75%), 1711.08M WeightUpdates/sec
+Iter:7/100, MeanErr=20.219238(-0.14%), 1725.43M WeightUpdates/sec
+Iter:8/100, MeanErr=20.192197(-0.13%), 1167.73M WeightUpdates/sec
+Iter:9/100, MeanErr=20.048496(-0.71%), 1249.37M WeightUpdates/sec
+Iter:10/100, MeanErr=20.188213(0.70%), 1642.79M WeightUpdates/sec
+Iter:11/100, MeanErr=20.166376(-0.11%), 1735.97M WeightUpdates/sec
+Iter:12/100, MeanErr=20.254113(0.44%), 1742.05M WeightUpdates/sec
+Iter:13/100, MeanErr=19.851461(-1.99%), 1595.79M WeightUpdates/sec
+Iter:14/100, MeanErr=20.199701(1.75%), 844.40M WeightUpdates/sec
+Iter:15/100, MeanErr=20.311071(0.55%), 1200.61M WeightUpdates/sec
+Iter:16/100, MeanErr=19.964710(-1.71%), 1049.46M WeightUpdates/sec
+Iter:17/100, MeanErr=19.847051(-0.59%), 1323.04M WeightUpdates/sec
+Iter:18/100, MeanErr=19.872145(0.13%), 995.21M WeightUpdates/sec
+Iter:19/100, MeanErr=20.053937(0.91%), 954.00M WeightUpdates/sec
+Iter:20/100, MeanErr=19.795058(-1.29%), 996.87M WeightUpdates/sec
+Iter:21/100, MeanErr=19.992375(1.00%), 987.79M WeightUpdates/sec
+Iter:22/100, MeanErr=19.668157(-1.62%), 992.06M WeightUpdates/sec
+Iter:23/100, MeanErr=19.795823(0.65%), 988.78M WeightUpdates/sec
+Iter:24/100, MeanErr=19.695772(-0.51%), 985.19M WeightUpdates/sec
+Iter:25/100, MeanErr=19.865355(0.86%), 1633.79M WeightUpdates/sec
+Iter:26/100, MeanErr=19.687222(-0.90%), 1122.27M WeightUpdates/sec
+Iter:27/100, MeanErr=19.929704(1.23%), 1281.84M WeightUpdates/sec
+Iter:28/100, MeanErr=19.758346(-0.86%), 899.65M WeightUpdates/sec
+Iter:29/100, MeanErr=19.812879(0.28%), 919.47M WeightUpdates/sec
+Iter:30/100, MeanErr=19.721827(-0.46%), 935.90M WeightUpdates/sec
+Iter:31/100, MeanErr=19.817214(0.48%), 949.75M WeightUpdates/sec
+Iter:32/100, MeanErr=19.802440(-0.07%), 1018.13M WeightUpdates/sec
+Iter:33/100, MeanErr=19.784113(-0.09%), 1336.38M WeightUpdates/sec
+Iter:34/100, MeanErr=19.778669(-0.03%), 947.49M WeightUpdates/sec
+Iter:35/100, MeanErr=19.402461(-1.90%), 962.93M WeightUpdates/sec
+Iter:36/100, MeanErr=19.601665(1.03%), 934.14M WeightUpdates/sec
+Iter:37/100, MeanErr=19.503046(-0.50%), 1516.71M WeightUpdates/sec
+Iter:38/100, MeanErr=19.428607(-0.38%), 966.83M WeightUpdates/sec
+Iter:39/100, MeanErr=19.655302(1.17%), 955.84M WeightUpdates/sec
+Iter:40/100, MeanErr=19.547042(-0.55%), 941.07M WeightUpdates/sec
+Iter:41/100, MeanErr=19.449203(-0.50%), 943.00M WeightUpdates/sec
+Iter:42/100, MeanErr=19.389405(-0.31%), 943.75M WeightUpdates/sec
+Iter:43/100, MeanErr=19.447828(0.30%), 943.45M WeightUpdates/sec
+Iter:44/100, MeanErr=19.356290(-0.47%), 945.24M WeightUpdates/sec
+Iter:45/100, MeanErr=19.450354(0.49%), 948.09M WeightUpdates/sec
+Iter:46/100, MeanErr=19.353228(-0.50%), 1113.90M WeightUpdates/sec
+Iter:47/100, MeanErr=19.608213(1.32%), 1300.84M WeightUpdates/sec
+Iter:48/100, MeanErr=19.323387(-1.45%), 1695.53M WeightUpdates/sec
+Iter:49/100, MeanErr=19.328002(0.02%), 1748.17M WeightUpdates/sec
+Iter:50/100, MeanErr=19.407987(0.41%), 1773.10M WeightUpdates/sec
+Iter:51/100, MeanErr=19.427078(0.10%), 1776.79M WeightUpdates/sec
+Iter:52/100, MeanErr=19.206271(-1.14%), 1769.42M WeightUpdates/sec
+Iter:53/100, MeanErr=19.462141(1.33%), 1774.15M WeightUpdates/sec
+Iter:54/100, MeanErr=19.222710(-1.23%), 1774.15M WeightUpdates/sec
+Iter:55/100, MeanErr=19.456309(1.22%), 1776.27M WeightUpdates/sec
+Iter:56/100, MeanErr=19.448784(-0.04%), 1781.57M WeightUpdates/sec
+Iter:57/100, MeanErr=19.377100(-0.37%), 1725.93M WeightUpdates/sec
+Iter:58/100, MeanErr=19.400568(0.12%), 1778.91M WeightUpdates/sec
+Iter:59/100, MeanErr=19.348898(-0.27%), 1752.28M WeightUpdates/sec
+Iter:60/100, MeanErr=19.368460(0.10%), 1435.71M WeightUpdates/sec
+Iter:61/100, MeanErr=19.349746(-0.10%), 1541.79M WeightUpdates/sec
+Iter:62/100, MeanErr=19.113111(-1.22%), 1451.42M WeightUpdates/sec
+Iter:63/100, MeanErr=19.208943(0.50%), 1544.18M WeightUpdates/sec
+Iter:64/100, MeanErr=19.285918(0.40%), 1278.27M WeightUpdates/sec
+Iter:65/100, MeanErr=19.358591(0.38%), 1226.02M WeightUpdates/sec
+Iter:66/100, MeanErr=19.259899(-0.51%), 1412.27M WeightUpdates/sec
+Iter:67/100, MeanErr=19.302988(0.22%), 1719.96M WeightUpdates/sec
+Iter:68/100, MeanErr=19.331186(0.15%), 1607.83M WeightUpdates/sec
+Iter:69/100, MeanErr=19.294819(-0.19%), 1711.57M WeightUpdates/sec
+Iter:70/100, MeanErr=19.272321(-0.12%), 1697.94M WeightUpdates/sec
+Iter:71/100, MeanErr=19.259247(-0.07%), 1714.03M WeightUpdates/sec
+Iter:72/100, MeanErr=19.225076(-0.18%), 1785.30M WeightUpdates/sec
+Iter:73/100, MeanErr=19.162315(-0.33%), 1794.96M WeightUpdates/sec
+Iter:74/100, MeanErr=19.268866(0.56%), 1532.68M WeightUpdates/sec
+Iter:75/100, MeanErr=19.254549(-0.07%), 1089.30M WeightUpdates/sec
+Iter:76/100, MeanErr=19.219284(-0.18%), 1426.45M WeightUpdates/sec
+Iter:77/100, MeanErr=19.087150(-0.69%), 1687.38M WeightUpdates/sec
+Iter:78/100, MeanErr=19.270645(0.96%), 1734.45M WeightUpdates/sec
+Iter:79/100, MeanErr=19.185702(-0.44%), 1748.17M WeightUpdates/sec
+Iter:80/100, MeanErr=18.877860(-1.60%), 1723.43M WeightUpdates/sec
+Iter:81/100, MeanErr=19.273860(2.10%), 1750.73M WeightUpdates/sec
+Iter:82/100, MeanErr=19.160013(-0.59%), 1751.76M WeightUpdates/sec
+Iter:83/100, MeanErr=19.065291(-0.49%), 1502.96M WeightUpdates/sec
+Iter:84/100, MeanErr=19.014279(-0.27%), 1715.51M WeightUpdates/sec
+Iter:85/100, MeanErr=19.176990(0.86%), 1736.98M WeightUpdates/sec
+Iter:86/100, MeanErr=19.099954(-0.40%), 1733.95M WeightUpdates/sec
+Iter:87/100, MeanErr=19.001618(-0.51%), 1773.63M WeightUpdates/sec
+Iter:88/100, MeanErr=19.247980(1.30%), 1777.32M WeightUpdates/sec
+Iter:89/100, MeanErr=19.263169(0.08%), 1609.99M WeightUpdates/sec
+Iter:90/100, MeanErr=19.140035(-0.64%), 1363.24M WeightUpdates/sec
+Iter:91/100, MeanErr=19.091719(-0.25%), 1014.66M WeightUpdates/sec
+Iter:92/100, MeanErr=19.049738(-0.22%), 1290.43M WeightUpdates/sec
+Iter:93/100, MeanErr=18.965320(-0.44%), 1620.05M WeightUpdates/sec
+Iter:94/100, MeanErr=18.791551(-0.92%), 1753.82M WeightUpdates/sec
+Iter:95/100, MeanErr=19.092858(1.60%), 1771.52M WeightUpdates/sec
+Iter:96/100, MeanErr=19.079706(-0.07%), 1786.90M WeightUpdates/sec
+Iter:97/100, MeanErr=19.176666(0.51%), 1789.04M WeightUpdates/sec
+Iter:98/100, MeanErr=19.228928(0.27%), 1739.51M WeightUpdates/sec
+Iter:99/100, MeanErr=19.091814(-0.71%), 1773.10M WeightUpdates/sec
+Iter:100/100, MeanErr=19.183899(0.48%), 1747.15M WeightUpdates/sec
+Done!
+Estimated Post-training MeanError = 18.832045
+___________________________________________________________________
+Not training a calibrator because it is not needed.
+Physical memory usage(MB): 53
+Virtual memory usage(MB): 1001
+3/6/2018 8:25:43 PM	 Time elapsed(s): 0.982
+
+[3] 'Saving model' started.
+[3] 'Saving model' finished in 00:00:00.1100311.

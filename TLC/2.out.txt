@@ -1,0 +1,27 @@
+maml.exe Train tr=XGBoostRegression loader=TextLoader{sep=, col=match_id:TX:0 col=inning:R4:1 col=batting_team:TX:2 col=bowling_team:TX:3 col=match_year:R4:5 col=extra_runs:R4:4 header=+} data=C:\Users\ajsharm\Documents\ML\IPL\data\transformed\extras.csv out=C:\Users\ajsharm\Documents\ML\IPL\TLC\models\2.model.zip xf=CopyColumns{col=Label:extra_runs} xf=CategoricalTransform{col=batting_team col=bowling_team} xf=Concat{col=Features:inning,batting_team,bowling_team,match_year}
+Not adding a normalizer.
+[1] 'Building term dictionary' started.
+[1] (00:00.02)	567 examples	Total Terms: 26
+[1] 'Building term dictionary' finished in 00:00:00.0170020.
+[2] 'Training with XGBoost' started.
+Sparse matrix created with nbFeatures=28 and nbRows=567 in 00:00:00.0165008.
+XGBoost objective=reg:linear
+Training is complete. Number of trees=10
+Not training a calibrator because it is not needed.
+Physical memory usage(MB): 52
+Virtual memory usage(MB): 1001
+3/6/2018 8:25:43 PM	 Time elapsed(s): 0.719
+
+[2] (00:00.09)	Iteration: 0	Training Time: 13.5004
+[2] (00:00.09)	Iteration: 1	Training Time: 15.0004
+[2] (00:00.09)	Iteration: 2	Training Time: 17.4995
+[2] (00:00.09)	Iteration: 3	Training Time: 20.0008
+[2] (00:00.10)	Iteration: 4	Training Time: 21.0007
+[2] (00:00.10)	Iteration: 5	Training Time: 22.0012
+[2] (00:00.10)	Iteration: 6	Training Time: 22.5016
+[2] (00:00.10)	Iteration: 7	Training Time: 23.0014
+[2] (00:00.10)	Iteration: 8	Training Time: 24.001
+[2] (00:00.10)	Iteration: 9	Training Time: 24.5014
+[2] 'Training with XGBoost' finished in 00:00:00.0995056.
+[3] 'Saving model' started.
+[3] 'Saving model' finished in 00:00:00.1250079.
