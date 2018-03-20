@@ -1,0 +1,16 @@
+{
+	"cities" : [
+		{
+			"city" : "Bangalore",
+			"airport" : "VOBG",
+			"state" : "KA",
+			"country" : "India"
+		},
+		{
+			"city" : "Mumbai",
+			"airport" : "VABB",
+			"state" : "MH",
+			"country" : "India"
+		}
+	]
+}
